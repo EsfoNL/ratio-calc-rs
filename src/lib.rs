@@ -146,6 +146,8 @@ impl Debug for Rational {
             write!(f, "{a}")
         } else if b == -1 {
             write!(f, "{}", -a)
+        } else if a / b == 0 {
+            write!(f, "{}/{}", a % b, b)
         } else {
             write!(f, "{}+{}/{}", a / b, a % b, b)
         }
